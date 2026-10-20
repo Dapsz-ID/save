@@ -1,0 +1,16 @@
+{
+  "name": "savetix",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "latest",
+    "puppeteer-core": "latest"
+  },
+  "devDependencies": {
+    "vercel": "latest"
+  }
+}
