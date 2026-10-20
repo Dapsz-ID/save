@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <title>SaveTix — TikTok Video & Photo Downloader</title>
+  <meta name="description" content="Download video TikTok tanpa watermark, foto carousel, dan audio dengan SaveTix. Gratis, cepat, responsif, tanpa perlu login.">
+  <meta name="keywords" content="TikTok downloader, download TikTok tanpa watermark, download video TikTok, TikTok photo carousel, download foto TikTok, SaveTix">
+  <meta name="author" content="abcdaps">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://savetix.vercel.app/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SaveTix">
+  <meta property="og:title" content="SaveTix — TikTok Downloader">
+  <meta property="og:description" content="Download video TikTok tanpa watermark, foto carousel, dan audio dengan mudah. Gratis dan tanpa login.">
+  <meta property="og:url" content="https://savetix.vercel.app/">
+  <meta property="og:image" content="https://savetix.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SaveTix TikTok Downloader">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SaveTix — TikTok Downloader">
+  <meta name="twitter:description" content="Download video TikTok tanpa watermark, foto carousel, dan audio. Gratis dan tanpa login.">
+  <meta name="twitter:image" content="https://savetix.vercel.app/og-image.png">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"SaveTix",
+    "url":"https://savetix.vercel.app/",
+    "description":"TikTok video, photo carousel, and audio downloader.",
+    "applicationCategory":"MultimediaApplication",
+    "operatingSystem":"Any",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"IDR"}
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="SaveTix beranda"><span class="brand-mark"><i class="fa-brands fa-tiktok"></i></span><span>SaveTix<span class="brand-dot">.</span></span></a>
+    <a class="top-link" href="#cara-pakai">Cara pakai <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="status-dot"></span> TIKTOK DOWNLOADER</div>
+      <h1>Simpan yang<br><span>kamu suka.</span></h1>
+      <p class="hero-copy">Download video, foto carousel, dan audio TikTok dalam beberapa langkah. Simpel, cepat, tanpa login.</p>
+
+      <form class="download-form" id="download-form">
+        <label class="sr-only" for="tiktok-url">Link TikTok</label>
+        <i class="fa-solid fa-link input-icon"></i>
+        <input id="tiktok-url" name="url" type="url" placeholder="Tempel link TikTok di sini..." autocomplete="url" inputmode="url" required>
+        <button class="paste-button" id="paste-button" type="button" aria-label="Tempel link"><i class="fa-regular fa-clipboard"></i><span>Tempel</span></button>
+        <button class="submit-button" id="submit-button" type="submit"><span>Download</span><i class="fa-solid fa-arrow-down"></i></button>
+      </form>
+      <p class="form-note"><i class="fa-solid fa-lock"></i> Link hanya diproses untuk mengambil media publik.</p>
+      <div class="error-message" id="error-message" role="alert" hidden></div>
+      <div class="loading-state" id="loading-state" hidden><span class="spinner"></span><span>Mengambil data TikTok...</span></div>
+    </section>
+
+    <section class="results-section" id="results-section" aria-live="polite" hidden>
+      <div class="section-heading"><div><span class="section-kicker">HASIL DOWNLOAD</span><h2>Konten kamu</h2></div><button class="icon-button" id="clear-button" type="button" aria-label="Hapus hasil"><i class="fa-solid fa-xmark"></i></button></div>
+      <article class="result-card">
+        <div class="result-preview" id="result-preview"></div>
+        <div class="result-content"><div class="result-label"><span class="status-dot"></span> SIAP DIUNDUH</div><h3 id="result-caption">Konten TikTok</h3><p class="result-subtitle" id="result-subtitle">Pilih file yang ingin disimpan.</p><div class="media-list" id="media-list"></div></div>
+      </article>
+    </section>
+
+    <section class="feature-strip" aria-label="Fitur SaveTix">
+      <div class="feature"><span class="feature-icon"><i class="fa-solid fa-video"></i></span><div><h3>Video TikTok</h3><p>Opsi video yang tersedia</p></div></div>
+      <div class="feature"><span class="feature-icon"><i class="fa-regular fa-images"></i></span><div><h3>Photo carousel</h3><p>Lihat dan simpan tiap slide</p></div></div>
+      <div class="feature"><span class="feature-icon"><i class="fa-solid fa-music"></i></span><div><h3>Audio</h3><p>Unduh audio jika tersedia</p></div></div>
+    </section>
+
+    <section class="how-section" id="cara-pakai">
+      <div class="section-kicker">TIGA LANGKAH MUDAH</div><h2>Cara pakai SaveTix</h2>
+      <div class="steps">
+        <article class="step"><span class="step-number">01</span><i class="fa-regular fa-copy step-icon"></i><h3>Salin link</h3><p>Buka TikTok, lalu salin tautan video atau postingan foto publik.</p></article>
+        <article class="step"><span class="step-number">02</span><i class="fa-solid fa-link step-icon"></i><h3>Tempel link</h3><p>Tempel tautan ke kolom di atas dan tekan tombol Download.</p></article>
+        <article class="step"><span class="step-number">03</span><i class="fa-solid fa-download step-icon"></i><h3>Simpan file</h3><p>Pilih video, audio, atau slide foto yang ingin kamu unduh.</p></article>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="section-kicker">FAQ</div><h2>Pertanyaan umum</h2>
+      <details><summary>Apakah SaveTix gratis?</summary><p>Ya, SaveTix bisa digunakan gratis tanpa membuat akun.</p></details>
+      <details><summary>Apakah mendukung foto carousel?</summary><p>SaveTix menampilkan tautan foto yang berhasil ditemukan oleh sumber scrape. Ketersediaan slide bergantung pada respons sumber.</p></details>
+      <details><summary>Kenapa link tidak bisa diproses?</summary><p>Pastikan link benar dan konten dapat diakses secara publik. Layanan scrape pihak ketiga dapat berubah atau sedang membatasi permintaan.</p></details>
+      <details><summary>Apakah saya perlu login ke TikTok?</summary><p>Tidak. Jangan pernah memasukkan kata sandi TikTok ke SaveTix.</p></details>
+    </section>
+    <p class="legal-note">Gunakan SaveTix hanya untuk mengunduh konten milik sendiri atau konten yang penggunaannya telah diizinkan pemiliknya. Hormati hak cipta dan ketentuan platform.</p>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="/"><span class="brand-mark"><i class="fa-brands fa-tiktok"></i></span><span>SaveTix<span class="brand-dot">.</span></span></a><p>Created By <strong>abcdaps</strong> - 2026</p><a href="/sitemap.xml">Sitemap</a></footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>
