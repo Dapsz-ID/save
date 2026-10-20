@@ -1,0 +1,10 @@
+{
+  "name": "SaveTix",
+  "short_name": "SaveTix",
+  "description": "TikTok video, photo carousel, and audio downloader",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
